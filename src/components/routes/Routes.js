@@ -1,9 +1,14 @@
 import React from 'react'
-import { BrowserRouter as Router } from 'react-dom'
-import { Home } from '../../screens/Home'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Home, NotFound } from '../../screens'
 
 export const Routes = () => {
     return (
-        <Home />
+        <Router>
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="*" component={NotFound} />
+            </Switch>
+        </Router>
     )
 }
